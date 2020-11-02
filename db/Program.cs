@@ -29,8 +29,9 @@ namespace db
             uwu = new MySqlConnection(stringBuilder.ConnectionString);
 
             MySqlCommand command = uwu.CreateCommand();
-            command.CommandText = "SELECT `year`, `name`, `project`,`crew` FROM sowwy.nazvanie JOIN  sowwy.projectt ON nazvanie.projecttt = projectt.id ";
-
+            Console.WriteLine("Введите команду: ");
+            string Kurisu = Console.ReadLine(); // SELECT `year`, `name`, `project`,`crew` FROM sowwy.nazvanie JOIN  sowwy.projectt ON nazvanie.projecttt = projectt.id
+            command.CommandText = Kurisu;
 
             List<owo> bd = new List<owo>();
 
@@ -54,7 +55,7 @@ namespace db
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\nПодробные ошибки: " + ex.StackTrace + "\n\nКоротко об ошибке: " + ex.Message);//дада взял у Айрата, я панк
+                Console.WriteLine(ex.Message);//дада взял у Айрата, я панк(уже не взял хахаха)
             }
             return bd;
         }
@@ -64,7 +65,7 @@ namespace db
             var Maki = Kurisu.kek();
             foreach (var data in Maki)
             {
-                Console.WriteLine(data.id + " ||| " + data.name.PadRight(15) + " ||| " + data.project.PadRight(10) + " ||| " + data.crew.PadRight(10));
+                Console.WriteLine(data.id + " | " + data.name.PadRight(15) + " | " + data.project.PadRight(10) + " | " + data.crew.PadRight(10));
             }
             Console.ReadLine();
         }
