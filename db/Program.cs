@@ -55,7 +55,7 @@ namespace db
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);//дада взял у Айрата, я панк(уже не взял хахаха)
+                Console.WriteLine(ex.Message);
             }
             return bd;
         }
